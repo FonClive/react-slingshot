@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - checkout:
+      - checkout
       - run: npm i
       - run: npm run lint
   Test:
@@ -13,14 +13,14 @@ jobs:
       - image: circleci/node:13.8.0
 
     steps:
-      - checkout:
+      - checkout
       - run: npm i
       - run: nmp run Test
   Analyze:
     docker:
     - image: circleci/node:13.8.0
     steps:
-      - checkout:
+      - checkout
       - run: nmp audit
     
     
