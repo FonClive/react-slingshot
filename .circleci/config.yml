@@ -11,11 +11,11 @@ jobs:
   Test:
     docker:
       - image: circleci/node:13.8.0
-
+# it is better to use save cache to avoid installing the nmp packages in both test and biuld jobs
     steps:
       - checkout
       - run: npm i
-      - run: npm run Test
+      - run: npm run test
   Analyze:
     docker:
     - image: circleci/node:13.8.0
